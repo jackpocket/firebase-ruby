@@ -10,7 +10,6 @@ module Firebase
     attr_reader :auth, :request
 
     def initialize(base_uri, auth=nil, scope=%w(https://www.googleapis.com/auth/firebase.database https://www.googleapis.com/auth/userinfo.email ))
-      base_uri += '/' unless base_uri.end_with?('/')
       @request = HTTPClient.new({
         :base_url => base_uri,
         :default_header => {
